@@ -1,0 +1,68 @@
+* {
+	box-sizing: border-box;
+}
+
+#viewPort {
+	max-width: 372px;
+	margin: 0 auto;
+	font-family: sans-serif;
+}
+
+.heading {
+	color: #40e7ea;
+	font-size: 22px;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+#commandField {
+	width: 251px;
+	height: 51px;
+	border: 2px solid #00dfe3;
+	text-indent: 14px;
+	text-transform: uppercase;
+}
+
+#commandBtn {
+	width: 112px;
+	height: 51px;
+	border: none;
+	margin-left: 4px;
+	color: #ffffff;
+	background-color: #acd373;
+	transition: background-color 1.5s;
+}
+
+#commandBtn:hover {
+	background-color: #7BA939
+}
+
+@media only screen and (max-width: 400px) {
+    #viewPort,
+    #commandField,
+    #commandBtn {
+        width: 100%;
+        min-width: 200px;
+    }
+
+    #commandBtn {
+    	margin-left: 0px;
+    	margin-top: 5px;
+    }
+    
+    #pond .col {
+    	width: calc((100% / 5) - 10px);
+    }
+
+    div.errorContainer {
+    	height: 35px;
+    }
+
+	.errorContainer .shortErr {
+		font-size: 14px;
+	}
+
+	.errorContainer .longErr {
+		font-size: 10px;
+	}
+}
