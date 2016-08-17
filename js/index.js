@@ -1,14 +1,5 @@
 "use strict"
 
-$(function(){
-	var viewPort = new Project.ViewPort({
-		elem:$("#viewPort"),
-		rows: 5,
-		cols: 5
-	});
-	viewPort.init();
-});
-
 var Project;
 (function(Project){
 	Project.ViewPort = (function(){
@@ -72,12 +63,14 @@ var Project;
 				}else if(e.which == 40){
 					_pond.executeCommand("REPORT");
 				}
+				
+				e.preventDefault();
 			});
 			
-			ViewPort.elem.find("#pond .col").on("click", {_ViewPort: ViewPort}, function(e){
+			ViewPort.elem.find("#pond .pond-col").on("click", {_ViewPort: ViewPort}, function(e){
 				var _ViewPort = e.data._ViewPort,
 					pond = _ViewPort.pond,
-					row = $(e.target).closest(".row").attr("id"),
+					row = $(e.target).closest(".pond-row").attr("id"),
 					col = $(e.target).attr("id"),
 					direction = "NORTH";
 					
@@ -103,3 +96,12 @@ var Project;
 		return ViewPort;
 	})();
 })(Project || (Project = {}));
+
+$(function(){
+	var viewPort = new Project.ViewPort({
+		elem:$("#viewPort"),
+		rows: 5,
+		cols: 5
+	});
+	viewPort.init();
+});

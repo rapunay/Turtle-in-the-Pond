@@ -23,13 +23,13 @@ var Pond = (function(){
 	
 	$.extend(Pond.prototype, {
 		create: function(){
-			var $pondContainer = $("<div><div class='errorContainer'><div class='shortErr'></div><div class='longErr'></div></div><div id='pond' tabindex='-1'></div></div>"),
+			var $pondContainer = $("<div id='pondContainer'><div class='errorContainer'><div class='shortErr'></div><div class='longErr'></div></div><div id='pond' tabindex='-1'></div></div>"),
 				pondContent = [];
 			
 			for(var i=(this.rows-1); i>=0; i--){
-				pondContent.push("<div class='row' id='" +i+ "'>");
+				pondContent.push("<div class='pond-row' id='" +i+ "'>");
 				for(var j=0; j<this.cols; j++){
-					pondContent.push("<div class='col' id='" +j+ "'></div>");
+					pondContent.push("<div class='pond-col' id='" +j+ "'></div>");
 				}
 				pondContent.push("</div>")
 			}
@@ -148,7 +148,7 @@ var Turtle = (function(){
 			}
 		
 			var $pond = this.pond,
-				pondCell = $pond.find(".row#" +row+ " .col#" +col),
+				pondCell = $pond.find(".pond-row#" +row+ " .pond-col#" +col),
 				turtleCell = $pond.find(".turtleCell");
 		
 			turtleCell.removeClass("turtleCell");

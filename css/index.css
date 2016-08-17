@@ -3,9 +3,12 @@
 }
 
 #viewPort {
+	height: 100%;
 	max-width: 372px;
 	margin: 0 auto;
 	font-family: sans-serif;
+	background-color: #ffffff;
+	padding: 10px;
 }
 
 .heading {
@@ -17,6 +20,7 @@
 
 #commandField {
 	width: 251px;
+	max-width: calc(60% - 6px);
 	height: 51px;
 	border: 2px solid #00dfe3;
 	text-indent: 14px;
@@ -24,7 +28,8 @@
 }
 
 #commandBtn {
-	width: 112px;
+	width: 150px;
+	max-width: calc(40% - 4px);
 	height: 51px;
 	border: none;
 	margin-left: 4px;
@@ -37,12 +42,17 @@
 	background-color: #7BA939
 }
 
+#pondContainer {
+	height: calc(100% - 103px);
+}
+
 @media only screen and (max-width: 400px) {
     #viewPort,
     #commandField,
     #commandBtn {
         width: 100%;
         min-width: 200px;
+        max-width: 100%;
     }
 
     #commandBtn {
@@ -50,8 +60,12 @@
     	margin-top: 5px;
     }
     
-    #pond .col {
+    #pond .pond-col {
     	width: calc((100% / 5) - 10px);
+    }
+
+    #pondContainer {
+    	height: calc(100% - 158px);
     }
 
     div.errorContainer {
